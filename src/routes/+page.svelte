@@ -2,12 +2,18 @@
   import prettyMilliseconds from 'pretty-ms'
   import {onDestroy} from 'svelte'
 
-  let intervals:number[] = []
+  enum Mode {
+    Work   = 'Work',
+    Chores = 'Chores',
+    Rest   = 'Rest'
+  }
+
+  let intervals:[Mode,number][] = []
   let lastSplit = Date.now()
   let now = Date.now()
+  let mode = Mode.Rest
 
   $:interval = now - lastSplit
-  $:working = intervals.length % 2 === 1
 
   if (typeof requestAnimationFrame !== 'undefined') {
     let frame:number;
@@ -21,23 +27,30 @@
     })
   }
 
-  function split() {
+  function split(nextMode:Mode) {
     now = Date.now()
-    intervals = [now - lastSplit, ...intervals]
+    intervals = [[mode, now - lastSplit], ...intervals]
     lastSplit = now
+
+    mode = nextMode
   }
 </script>
 
 <h1>Pomodoro Inversion</h1>
 
-<div>{prettyMilliseconds(interval)}</div>
+<div>
+  <span>{mode}</span>
+  <span>{prettyMilliseconds(interval)}</span>
+</div>
 
-<button on:click={split}>{ working ? "rest" : "work" }</button>
+<button on:click={() => split(Mode.Work)}>Work</button>
+<button on:click={() => split(Mode.Chores)}>Chores</button>
+<button on:click={() => split(Mode.Rest)}>Rest</button>
 
 <h2>cycle history</h2>
-{ #each intervals as interval, i }
+{ #each intervals as [mode, interval], i }
   <div>
-    <span>{(intervals.length - i) % 2 === 0 ? "work" : "rest" }</span>
+    <span>{mode}</span>
     <span>{prettyMilliseconds(interval)}</span>
   </div>
 { /each }
