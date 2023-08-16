@@ -1,12 +1,7 @@
 <script lang="ts">
-  import prettyMilliseconds from 'pretty-ms'
+  import Interval from '$lib/Interval.svelte';
+  import Mode from '$lib/mode';
   import {onDestroy} from 'svelte'
-
-  enum Mode {
-    Work   = 'Work',
-    Chores = 'Chores',
-    Rest   = 'Rest'
-  }
 
   let intervals:[Mode,number][] = []
   let lastSplit = Date.now()
@@ -44,13 +39,9 @@
   { /each }
 </div>
 
-<div>
-  <span>{nowMode}</span>
-  <span>{prettyMilliseconds(interval)}</span>
-</div>
+<Interval mode={nowMode} interval={interval}/>
 { #each intervals as [mode, interval], i }
   <div>
-    <span>{mode}</span>
-    <span>{prettyMilliseconds(interval)}</span>
+    <Interval mode={mode} interval={interval}/>
   </div>
 { /each }
