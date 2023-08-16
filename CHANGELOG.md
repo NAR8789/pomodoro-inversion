@@ -1,3 +1,7 @@
+# v0.2.0
+
+- [ ] additional mode "chores"
+
 # v0.1.0
 
 - Pretty print the time in hours minutes seconds instead of milliseconds.
