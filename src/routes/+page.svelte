@@ -11,7 +11,7 @@
   let intervals:[Mode,number][] = []
   let lastSplit = Date.now()
   let now = Date.now()
-  let mode = Mode.Rest
+  let nowMode = Mode.Rest
 
   $:interval = now - lastSplit
 
@@ -29,23 +29,23 @@
 
   function split(nextMode:Mode) {
     now = Date.now()
-    intervals = [[mode, now - lastSplit], ...intervals]
+    intervals = [[nowMode, now - lastSplit], ...intervals]
     lastSplit = now
 
-    mode = nextMode
+    nowMode = nextMode
   }
 </script>
 
 <h1>Pomodoro Inversion</h1>
 
 <div>
-  <span>{mode}</span>
+  <span>{nowMode}</span>
   <span>{prettyMilliseconds(interval)}</span>
 </div>
 
-<button on:click={() => split(Mode.Work)}>Work</button>
-<button on:click={() => split(Mode.Chores)}>Chores</button>
-<button on:click={() => split(Mode.Rest)}>Rest</button>
+{ #each Object.values(Mode) as mode }
+  <button on:click={() => split(mode)} disabled={mode === nowMode}>{mode}</button>
+{ /each }
 
 <h2>cycle history</h2>
 { #each intervals as [mode, interval], i }
