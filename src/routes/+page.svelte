@@ -39,15 +39,15 @@
 <h1>Pomodoro Inversion</h1>
 
 <div>
+  { #each Object.values(Mode) as mode }
+    <button on:click={() => split(mode)} disabled={mode === nowMode}>{mode}</button>
+  { /each }
+</div>
+
+<div>
   <span>{nowMode}</span>
   <span>{prettyMilliseconds(interval)}</span>
 </div>
-
-{ #each Object.values(Mode) as mode }
-  <button on:click={() => split(mode)} disabled={mode === nowMode}>{mode}</button>
-{ /each }
-
-<h2>cycle history</h2>
 { #each intervals as [mode, interval], i }
   <div>
     <span>{mode}</span>
