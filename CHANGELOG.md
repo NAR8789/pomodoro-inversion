@@ -1,7 +1,7 @@
-# v0.0.1 (in progress)
+# v0.1.0
 
-- [x] Pretty print the time in hours minutes seconds instead of milliseconds.
-- [ ] deploy a static site to cloudflare pages
+- Pretty print the time in hours minutes seconds instead of milliseconds.
+- deploy as static site: https://pi.nar8789.xyz/
 
 # v0.0.0
 
