@@ -1,4 +1,5 @@
 <script lang="ts">
+  import prettyMilliseconds from 'pretty-ms'
   import {onDestroy} from 'svelte'
 
   let intervals:number[] = []
@@ -29,7 +30,7 @@
 
 <h1>Pomodoro Inversion</h1>
 
-<div>{interval}</div>
+<div>{prettyMilliseconds(interval)}</div>
 
 <button on:click={split}>{ working ? "rest" : "work" }</button>
 
@@ -37,6 +38,6 @@
 { #each intervals as interval, i }
   <div>
     <span>{(intervals.length - i) % 2 === 0 ? "work" : "rest" }</span>
-    <span>{interval}</span>
+    <span>{prettyMilliseconds(interval)}</span>
   </div>
 { /each }
