@@ -1,28 +1,39 @@
-# create-svelte
+# pomodoro-inversion
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Inverted pomodoro timer.
+Rather than alerting me at the ends of fixed cycles, I just tell the timer when I'm working vs taking a break.
+I work until a natural switching point.
+And then I break until I feel refreshed.
+The timer tells me how long I've taken in each cycle.
 
-## Creating a project
+This way I'm proactively managing my focus, rather than reactively following pomodoro notifications.
 
-If you're seeing this, you've probably already done this step. Congrats!
+I find regular pomodoro a bit too rigid.
+When I'm first getting into the groove, shorter work cycles are nicer.
+Once I'm in flow, longer work cycles are nicer.
+If I have a lot of meetings, pomodoro work cycles don't necessarily tile well with meeting schedule.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## Design
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+If I'm managing my work/rest cycles, why do I even need a timer?
+For statistics of course.
+
+Pomodoro inversion is essentially a modified split stopwatch.
+- Show The running length of the current cycle.
+- have a button for starting next cycle.
+- after n cycles, give a hint for longer rest.
+- Show the lengths of previous cycles.
+- indicate which cycles are work vs rest.
 
 ## Developing
 
 Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
 ```bash
-npm run dev
+pnpm run dev
 
 # or start the server and open the app in a new browser tab
-npm run dev -- --open
+pnpm run dev -- --open
 ```
 
 ## Building
@@ -30,7 +41,7 @@ npm run dev -- --open
 To create a production version of your app:
 
 ```bash
-npm run build
+pnpm run build
 ```
 
 You can preview the production build with `npm run preview`.
