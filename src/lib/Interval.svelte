@@ -7,6 +7,6 @@
 </script>
 
 <div>
+  <span>{prettyMilliseconds(interval, {colonNotation: true, keepDecimalsOnWholeSeconds: true, secondsDecimalDigits: 2})}</span>
   <span>{mode}</span>
-  <span>{prettyMilliseconds(interval)}</span>
 </div>
