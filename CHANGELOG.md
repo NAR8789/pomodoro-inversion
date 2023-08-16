@@ -1,6 +1,6 @@
 # v0.2.0
 
-- [ ] additional mode "chores"
+- additional mode "chores"
 
 # v0.1.0
 
