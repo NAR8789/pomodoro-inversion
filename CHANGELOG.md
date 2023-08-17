@@ -3,7 +3,7 @@
 Make it prettier
 
 - [x] group the in-progress timer with the interval history.
-- [ ] bigger buttons
+- [x] bigger buttons
 - [x] stabilize the time display so it doesn't wiggle around.
 
 # v0.2.0

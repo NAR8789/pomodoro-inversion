@@ -33,7 +33,7 @@
 
 <h1>Pomodoro Inversion</h1>
 
-<div>
+<div class="mode-buttons">
   { #each Object.values(Mode) as mode }
     <button on:click={() => split(mode)} disabled={mode === nowMode}>{mode}</button>
   { /each }
@@ -45,3 +45,18 @@
     <Interval mode={mode} interval={interval}/>
   </div>
 { /each }
+
+<style>
+  .mode-buttons {
+    height: 80vh;
+    margin: 1em;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .mode-buttons button {
+    flex-grow: 1;
+  }
+</style>
