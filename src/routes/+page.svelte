@@ -31,7 +31,9 @@
   }
 </script>
 
-<h1>Pomodoro Inversion</h1>
+<svelte:head>
+  <title>Pomodoro Inversion</title>
+</svelte:head>
 
 <div class="mode-buttons">
   { #each Object.values(Mode) as mode }
