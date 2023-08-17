@@ -5,6 +5,7 @@ Make it prettier
 - [x] group the in-progress timer with the interval history.
 - [x] bigger buttons
 - [x] stabilize the time display so it doesn't wiggle around.
+- [x] Rename "Work" and "Chores" to "Focus" and "React"
 
 # v0.2.0
 

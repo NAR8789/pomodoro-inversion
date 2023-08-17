@@ -25,6 +25,22 @@ Pomodoro inversion is essentially a modified split stopwatch.
 - Show the lengths of previous cycles.
 - indicate which cycles are work vs rest.
 
+## Focus, Rest, React, vs Work, Rest
+
+Normal pomodoro uses "work" and "rest" cycles.
+
+I think of "work" as in-flow work, and rest as a kind of focused recovery.
+But there's a third state where I'm doing chores or reacting to environment.
+
+So I rename "Work" to "Focus", and I add an additional cycle type, "React".
+"Focus", "Rest", "React".
+
+Naming is a work in progress.
+Rest is clear and well-named, but the two types of work are tricky.
+Other things I've considered...
+- Work, Chores
+- Focused Work, Unfocused Work
+
 ## Developing
 
 Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:

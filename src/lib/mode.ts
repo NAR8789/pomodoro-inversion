@@ -1,7 +1,7 @@
 export enum Mode {
-  Work   = 'Work',
-  Chores = 'Chores',
-  Rest   = 'Rest'
+  Focus = 'Focus',
+  Rest  = 'Rest',
+  React = 'React',
 }
 
 export default Mode
