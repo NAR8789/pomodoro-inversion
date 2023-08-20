@@ -1,3 +1,9 @@
+# v0.4.0
+
+Persistent sessions
+
+- [ ] session persistence. Local storage? URL params?
+
 # v0.3.0
 
 Make it more usable.
