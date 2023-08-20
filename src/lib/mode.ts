@@ -1,7 +1,7 @@
 export enum Mode {
   Focus = 'Focus',
-  Rest  = 'Rest',
   React = 'React',
+  Rest  = 'Rest',
 }
 
 export default Mode
