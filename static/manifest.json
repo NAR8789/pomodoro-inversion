@@ -1,5 +1,6 @@
 {
   "name": "Pomodoro Inversion",
+  "short_name": "orodomoP",
   "start_url": "/",
   "display": "standalone",
   "icons": [
