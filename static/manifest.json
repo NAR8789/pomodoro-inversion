@@ -1,0 +1,17 @@
+{
+  "name": "Pomodoro Inversion",
+  "start_url": "/",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "pie-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "pie-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ]
+}
